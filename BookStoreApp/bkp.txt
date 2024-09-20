@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <!-- Your content goes here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="imgs/logo.png" alt="Logo" height="30" class="d-inline-block align-top">
+            Book Store
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- <h1 class="text-center">Book Store</h1> -->
+        <!-- <div class="row">
+            <div class="col-md-4 m-5">
+                <a id="btnNewBook" href="javascript:void(0)" class="btn btn-primary"><i class="fas fa-plus"></i> Add Book</a>
+            </div>
+        </div> -->
+                
+        <div id="booksGrid">
+            <!-- <div class="card flex-row flex-wrap">
+                <div class="card-header border-0 p-0">
+                    <img src="/imgs/book-cover.jpg" alt="" height="250" />
+                </div>
+                <div class="card-block px-2">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Description</p>
+                    <a href="#" class="btn btn-primary">BUTTON</a>
+                </div>
+                <div class="w-100"></div>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            loadBooks();
+            
+            // $('#btnNewBook').click(function(){
+            //     alert('Adding a new book');
+            // });
+        });
+
+        function loadBooks() {
+            fetch('http://localhost:3000/books')
+            .then(response => response.json())
+            .then(data => {
+                // Process the data here
+                //console.log(data);
+                var booksGrid = $('#booksGrid');
+                booksGrid.empty();
+                var books = data.books;
+                for (var i = 0; i < books.length; i++) {
+                    var book = books[i];
+                    var bookHtml = '<div class="col-md-4">';
+                    bookHtml += '<div class="panel panel-default">';
+                    //bookHtml += '<div class="panel-heading">' + book.title + '</div>';
+                    bookHtml += '<div class="panel-body">';
+                    bookHtml += '<p>' + book.author + '</p>';
+                    bookHtml += '<h5 class="card-title">' + book.title + '</p>';
+                    bookHtml += '<p>' + book.category + '</p>';
+                    bookHtml += '</div>';
+                    bookHtml += '</div>';
+                    bookHtml += '</div>';
+                    booksGrid.append(bookHtml);
+                    //put the books in cards with bootstrap with card image to the left and title, category and author to the right
+                    // var book = books[i];
+                    // var bookHtml = '<div class="col-md-6">';
+                    // bookHtml += '<div class="card flex-row flex-wrap">';
+                    // //bookHtml += '<img class="card-img-top" src="' + book.cover_photo_url + '" alt="Book Image">';
+                    // //bookHtml += '<img class="card-img-top" src="/imgs/book-cover.jpg" alt="Book Cover Page">';
+                    // bookHtml += '<div class="card-header border-0 p-0">';
+                    // bookHtml += '<img src="/imgs/book-cover.jpg" alt="" height="250" />';
+                    // bookHtml += '</div>';
+                    // bookHtml += '<div class="card-block px-2 p-4">';
+                    // bookHtml += '<p class="card-text">' + book.author + '</p>';
+                    // bookHtml += '<h5 class="card-title text-center">' + book.title + '</h5>';
+                    // bookHtml += '<p class="card-text">' + book.category + '</p>';
+                    // bookHtml += '</div>';
+                    // bookHtml += '</div>';
+                    // bookHtml += '</div>';
+                    // booksGrid.append(bookHtml);
+                }
+            })
+            .catch(error => {
+                // Handle any errors here
+                console.error(error);
+            });
+        }
+    </script>
+</body>
+    <title>Book Store</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <!-- Your content goes here -->
+    <div class="container">
+        <h1 class="text-center">Book Store</h1>
+        <div class="row">
+            <div class="col-md-4 m-5">
+                <a id="btnNewBook" href="javascript:void(0)" class="btn btn-primary"><i class="fas fa-plus"></i> Add Book</a>
+            </div>
+        </div>
+                
+        <div id="booksGrid" class="row">
+            <!-- <div class="card flex-row flex-wrap">
+                <div class="card-header border-0 p-0">
+                    <img src="/imgs/book-cover.jpg" alt="" height="250" />
+                </div>
+                <div class="card-block px-2">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Description</p>
+                    <a href="#" class="btn btn-primary">BUTTON</a>
+                </div>
+                <div class="w-100"></div>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            loadBooks();
+            
+            $('#btnNewBook').click(function(){
+                alert('Adding a new book');
+            });
+        });
+
+        function loadBooks() {
+            fetch('http://localhost:3000/books')
+            .then(response => response.json())
+            .then(data => {
+                // Process the data here
+                //console.log(data);
+                var booksGrid = $('#booksGrid');
+                booksGrid.empty();
+                var books = data.books;
+                for (var i = 0; i < books.length; i++) {
+                    // var book = books[i];
+                    // var bookHtml = '<div class="col-md-4">';
+                    // bookHtml += '<div class="panel panel-default">';
+                    // bookHtml += '<div class="panel-heading">' + book.title + '</div>';
+                    // bookHtml += '<div class="panel-body">';
+                    // bookHtml += '<p>' + book.author + '</p>';
+                    // bookHtml += '<p>' + book.category + '</p>';
+                    // bookHtml += '</div>';
+                    // bookHtml += '</div>';
+                    // bookHtml += '</div>';
+                    // booksGrid.append(bookHtml);
+                    //put the books in cards with bootstrap with card image to the left and title, category and author to the right
+                    var book = books[i];
+                    var bookHtml = '<div class="col-md-6">';
+                    bookHtml += '<div class="card flex-row flex-wrap">';
+                    //bookHtml += '<img class="card-img-top" src="' + book.cover_photo_url + '" alt="Book Image">';
+                    //bookHtml += '<img class="card-img-top" src="/imgs/book-cover.jpg" alt="Book Cover Page">';
+                    bookHtml += '<div class="card-header border-0 p-0">';
+                    bookHtml += '<img src="/imgs/book-cover.jpg" alt="" height="250" />';
+                    bookHtml += '</div>';
+                    bookHtml += '<div class="card-block px-2 p-4">';
+                    bookHtml += '<p class="card-text">' + book.author + '</p>';
+                    bookHtml += '<h5 class="card-title text-center">' + book.title + '</h5>';
+                    bookHtml += '<p class="card-text">' + book.category + '</p>';
+                    bookHtml += '</div>';
+                    bookHtml += '</div>';
+                    bookHtml += '</div>';
+                    booksGrid.append(bookHtml);
+
+                    
+                }
+            })
+            .catch(error => {
+                // Handle any errors here
+                console.error(error);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <style>
+        .badge {
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        .heading {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .card {
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-fluid {
+            cursor: pointer;
+        }
+
+        .img-popup-container {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow: auto;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .img-popup-container img {
+            display: block;
+            margin: auto;
+            /* max-width: 80%; */
+            height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .img-close {
+            color: white;
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .img-close:hover,
+        .img-close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Your content goes here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="imgs/logo.png" alt="Logo" height="30" class="d-inline-block align-top">
+            Book Store
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5 mb-5">
+        <!-- <h1 class="text-center">Book Store</h1> -->
+        <!-- <div class="row">
+            <div class="col-md-4 m-5">
+                <a id="btnNewBook" href="javascript:void(0)" class="btn btn-primary"><i class="fas fa-plus"></i> Add Book</a>
+            </div>
+        </div> -->
+                
+        <div id="booksGrid" class="row">
+            <!-- <div class="col-md-4 col-sm-6">
+                <div class="card p-3 mb-2">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="ms-2 c-details">
+                                <h6 class="mb-0">author</h6>
+                            </div>
+                        </div>
+                        <div class="badge"> <span>category</span> </div>
+                    </div>
+                    <div class="mt-4" style="height: 120px;overflow: hidden;">
+                        <h4 class="heading">The book title</h4>
+                        <p class="">Short description Short description Short description Short description Short description Short description Short description Short description</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="bookDetailsModal" tabindex="-1" role="dialog" aria-labelledby="bookDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookDetailsModalLabel">Book Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Book details go here -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img id="imgCover" src="imgs/generic-cover.jpg" alt="Book Cover" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h4 id="lblTitle">The book title</h4>
+                            <p><strong>Author: </strong> <span id="lblAuthor"></span></p>
+                            <p><strong>Category: </strong> <span id="lblCategory"></span></p>
+                            <p><strong>Issue Date: </strong> <span id="lblIssueDate"></span></p>
+                            <p><strong>Summary: </strong> <span id="lblShortSummary"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="img-popup-container">
+        <span class="img-close">&times;</span>
+        <img src="imgs/generic-cover.jpg" alt="Image" class="popup-img">
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            loadBooks();
+            
+            // event listener for card click
+            $('#booksGrid').on('click', '.card', function(){
+                viewBookDetails($(this).data('details'));
+            });
+
+            //imgCover on click event pop up with close button
+            $('#imgCover').on('click', function(){
+                //$('.img-popup-container').show();
+                $('.popup-img').attr('src', $(this).attr('src'));
+                $(".img-popup-container").fadeIn();
+            });
+
+            $(".img-popup-container").on('click', '.img-close', function(){
+                $(".img-popup-container").fadeOut();
+            });
+            
+            // $('#btnNewBook').click(function(){
+            //     alert('Adding a new book');
+            // });
+        });
+
+        viewBookDetails = function(book) {
+            $('#lblTitle').text(book.title);
+            $('#lblAuthor').text(book.author);
+            $('#lblCategory').text(book.category);
+            $('#lblIssueDate').text(book.issue_date);
+            $('#lblShortSummary').text(book.short_summary);
+            //var cover = validateURL(book.cover_photo_url);
+            //$('#imgCover').attr('src', cover);
+            checkFileExists(book.cover_photo_url, function(exists) {
+                if (exists) {
+                    $('#imgCover').attr('src', book.cover_photo_url);
+                    // Do something if file exists
+                } else {
+                    $('#imgCover').attr('src', 'imgs/generic-cover.jpg');
+                    //console.log('File does not exist or URL is invalid.');
+                }
+            });
+            $('#bookDetailsModal').modal('show');            
+        }
+
+        loadBooks = function() {
+            fetch('http://localhost:3000/books')
+            .then(response => response.json())
+            .then(data => {
+                // Process the data here
+                //console.log(data);
+                var booksGrid = $('#booksGrid');
+                booksGrid.empty();
+                var books = data.books;
+                for (let i = 0; i < books.length; i++) {
+                    var book = books[i];
+                    var bookDetails = JSON.stringify(book);
+                    var bookHtml = '<div class="col-md-4 col-sm-6">';
+                    bookHtml += '<div class="card p-3 mb-2" data-details=\'' + bookDetails + '\'>';
+                    bookHtml += '<div class="d-flex justify-content-between">';
+                    bookHtml += '<div class="d-flex flex-row align-items-center">';
+                    bookHtml += '<div class="ms-2 c-details">';
+                    bookHtml += '<h6 class="mb-0">' + book.author + '</h6>';
+                    bookHtml += '</div>';
+                    bookHtml += '</div>';
+                    bookHtml += '<div class="badge"> <span>' + book.category + '</span> </div>';
+                    bookHtml += '</div>';
+                    bookHtml += '<div class="mt-4" style="height: 120px;overflow: hidden;">';
+                    bookHtml += '<h4 class="heading">' + book.title + '</h4>';
+                    bookHtml += '<p class="mt-3"><strong>About: </strong>' + book.short_summary + '</p>';
+                    bookHtml += '</div>';
+                    bookHtml += '</div>';
+                    bookHtml += '</div>';
+                    booksGrid.append(bookHtml);
+                }
+            })
+            .catch(error => {
+                // Handle any errors here
+                console.error(error);
+            });
+        }        
+
+
+        function validateURL(url) {
+            $.ajax({
+                url: url,
+                type: 'HEAD',
+                success: function() {
+                    return url
+                },
+                error: function() {
+                    return 'imgs/generic-cover.jpg';
+                }
+            });
+        }
+
+        function checkFileExists(url, callback) {
+            $.ajax({
+                url: url,
+                type: 'HEAD', // Use HEAD method to check without downloading the file
+                success: function() {
+                    callback(true);
+                },
+                error: function() {
+                    callback(false);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

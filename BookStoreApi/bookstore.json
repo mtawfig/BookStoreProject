@@ -1,0 +1,314 @@
+{
+    "books": [
+      {
+        "title": "The Great Adventure",
+        "author": "Alex Reed",
+        "category": "Adventure",
+        "issue_number": 1,
+        "issue_date": "2021-03-15",
+        "short_summary": "An epic journey across uncharted territories.",
+        "cover_photo_url": "http://localhost:8080/imgs/The Great Adventures.png",
+        "book_url": "http://localhost:8080/books/sea rocks.pdf"
+      },
+      {
+        "title": "Mystery of the Old House",
+        "author": "Sarah Clarke",
+        "category": "Mystery",
+        "issue_number": 2,
+        "issue_date": "2021-04-10",
+        "short_summary": "Solving the enigma of an ancient family estate.",
+        "cover_photo_url": "http://localhost:8080/imgs/Mystery of the old house.png",
+        "book_url": "http://localhost:8080/books/sea rocks.pdf"
+      },
+      {
+        "title": "Future's Past",
+        "author": "John Doe",
+        "category": "Science Fiction",
+        "issue_number": 3,
+        "issue_date": "2021-05-05",
+        "short_summary": "A time travel paradox unravels the fabric of existence.",
+        "cover_photo_url": "http://localhost:8080/imgs/Futures Past.png",
+        "book_url": "http://localhost:8080/books/sea rocks.pdf"
+      },
+      {
+        "title": "The Lost Kingdom",
+        "author": "Emily White",
+        "category": "Fantasy",
+        "issue_number": 4,
+        "issue_date": "2021-06-01",
+        "short_summary": "A quest to reclaim a throne from dragons.",
+        "cover_photo_url": "https://example.com/cover4.jpg",
+        "book_url": "http://localhost:8080/books/sea rocks.pdf"
+      },
+      {
+        "title": "Code Complete",
+        "author": "Steve McConnell",
+        "category": "Technology",
+        "issue_number": 5,
+        "issue_date": "2021-07-07",
+        "short_summary": "A practical handbook of software construction.",
+        "cover_photo_url": "https://example.com/cover5.jpg"
+      },
+      {
+        "title": "The Art of War",
+        "author": "Sun Tzu",
+        "category": "History",
+        "issue_number": 6,
+        "issue_date": "2021-08-12",
+        "short_summary": "Ancient strategies for modern day applications.",
+        "cover_photo_url": "http://localhost:8080/imgs/The Art of War.png"
+      },
+      {
+        "title": "Deep Learning",
+        "author": "Ian Goodfellow",
+        "category": "Technology",
+        "issue_number": 7,
+        "issue_date": "2021-09-09",
+        "short_summary": "Exploring the frontiers of artificial intelligence.",
+        "cover_photo_url": "https://example.com/cover7.jpg"
+      },
+      {
+        "title": "The Silent Ocean",
+        "author": "Grace Murray",
+        "category": "Romance",
+        "issue_number": 8,
+        "issue_date": "2021-10-15",
+        "short_summary": "A love story set against the backdrop of the sea.",
+        "cover_photo_url": "https://example.com/cover8.jpg"
+      },
+      {
+        "title": "The Mind's Eye",
+        "author": "H.G. Wells",
+        "category": "Science Fiction",
+        "issue_number": 9,
+        "issue_date": "2021-11-11",
+        "short_summary": "Exploring the limits of human imagination.",
+        "cover_photo_url": "https://example.com/cover9.jpg"
+      },
+      {
+        "title": "The Last Stand",
+        "author": "Markus Zuzak",
+        "category": "Drama",
+        "issue_number": 10,
+        "issue_date": "2021-12-20",
+        "short_summary": "A gripping tale of resilience and survival.",
+        "cover_photo_url": "https://example.com/cover10.jpg"
+      },
+      {
+        "title": "The Culinary Art",
+        "author": "Julia Child",
+        "category": "Cooking",
+        "issue_number": 11,
+        "issue_date": "2022-01-15",
+        "short_summary": "Mastering the art of French cooking.",
+        "cover_photo_url": "https://example.com/cover11.jpg"
+      },
+      {
+        "title": "The Universe Within",
+        "author": "Neil deGrasse Tyson",
+        "category": "Science",
+        "issue_number": 12,
+        "issue_date": "2022-02-10",
+        "short_summary": "A cosmic journey through space and time.",
+        "cover_photo_url": "https://example.com/cover12.jpg"
+      },
+      {
+        "title": "The Hidden Life",
+        "author": "E.O. Wilson",
+        "category": "Nature",
+        "issue_number": 13,
+        "issue_date": "2022-03-07",
+        "short_summary": "Unveiling the secrets of the natural world.",
+        "cover_photo_url": "https://example.com/cover13.jpg"
+      },
+      {
+        "title": "The Power of Habit",
+        "author": "Charles Duhigg",
+        "category": "Self-help",
+        "issue_number": 14,
+        "issue_date": "2022-04-04",
+        "short_summary": "Why we do what we do in life and business.",
+        "cover_photo_url": "https://example.com/cover14.jpg"
+      },
+      {
+        "title": "The World of Ice and Fire",
+        "author": "George R.R. Martin",
+        "category": "Fantasy",
+        "issue_number": 15,
+        "issue_date": "2022-05-02",
+        "short_summary": "The untold history of Westeros and the Game of Thrones.",
+        "cover_photo_url": "https://example.com/cover15.jpg"
+      },
+      {
+        "title": "The Innovators",
+        "author": "Walter Isaacson",
+        "category": "Biography",
+        "issue_number": 16,
+        "issue_date": "2022-06-06",
+        "short_summary": "How a group of inventors, hackers, geniuses, and geeks created the digital revolution.",
+        "cover_photo_url": "https://example.com/cover16.jpg"
+      },
+      {
+        "title": "The Night Circus",
+        "author": "Erin Morgenstern",
+        "category": "Fantasy",
+        "issue_number": 17,
+        "issue_date": "2022-07-07",
+        "short_summary": "A magical competition between two young illusionists.",
+        "cover_photo_url": "https://example.com/cover17.jpg"
+      },
+      {
+        "title": "The Theory of Everything",
+        "author": "Stephen Hawking",
+        "category": "Science",
+        "issue_number": 18,
+        "issue_date": "2022-08-08",
+        "short_summary": "The origin and fate of the universe.",
+        "cover_photo_url": "https://example.com/cover18.jpg"
+      },
+      {
+        "title": "The Color Purple",
+        "author": "Alice Walker",
+        "category": "Fiction",
+        "issue_number": 19,
+        "issue_date": "2022-09-09",
+        "short_summary": "A deeply moving novel about the strength of love and spirit.",
+        "cover_photo_url": "https://example.com/cover19.jpg"
+      },
+      {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "category": "Fiction",
+        "issue_number": 20,
+        "issue_date": "2022-10-10",
+        "short_summary": "A tale of following one's dream to its ultimate destination.",
+        "cover_photo_url": "https://example.com/cover20.jpg"
+      },
+      {
+        "title": "The Brief History of Time",
+        "author": "Stephen Hawking",
+        "category": "Science",
+        "issue_number": 21,
+        "issue_date": "2022-11-11",
+        "short_summary": "Exploring the cosmos from the Big Bang to black holes.",
+        "cover_photo_url": "https://example.com/cover21.jpg"
+      },
+      {
+        "title": "The Lean Startup",
+        "author": "Eric Ries",
+        "category": "Business",
+        "issue_number": 22,
+        "issue_date": "2022-12-12",
+        "short_summary": "A new approach to business that's being adopted around the world.",
+        "cover_photo_url": "https://example.com/cover22.jpg"
+      },
+      {
+        "title": "The Four Agreements",
+        "author": "Don Miguel Ruiz",
+        "category": "Self-help",
+        "issue_number": 23,
+        "issue_date": "2023-01-13",
+        "short_summary": "A practical guide to personal freedom.",
+        "cover_photo_url": "https://example.com/cover23.jpg"
+      },
+      {
+        "title": "The Fifth Agreement",
+        "author": "Don Miguel Ruiz",
+        "category": "Self-help",
+        "issue_number": 24,
+        "issue_date": "2023-02-14",
+        "short_summary": "A deeper understanding of the Toltec wisdom and the path to personal freedom.",
+        "cover_photo_url": "https://example.com/cover24.jpg"
+      },
+      {
+        "title": "The Martian",
+        "author": "Andy Weir",
+        "category": "Science Fiction",
+        "issue_number": 25,
+        "issue_date": "2023-03-15",
+        "short_summary": "Astronaut Mark Watney's struggle for survival on Mars.",
+        "cover_photo_url": "https://example.com/cover25.jpg"
+      },
+      {
+        "title": "The Phoenix Project",
+        "author": "Gene Kim",
+        "category": "Technology",
+        "issue_number": 26,
+        "issue_date": "2023-04-16",
+        "short_summary": "A novel about IT, DevOps, and helping your business win.",
+        "cover_photo_url": "https://example.com/cover26.jpg"
+      },
+      {
+        "title": "The Subtle Art of Not Giving a F*ck",
+        "author": "Mark Manson",
+        "category": "Self-help",
+        "issue_number": 27,
+        "issue_date": "2023-05-17",
+        "short_summary": "A counterintuitive approach to living a good life.",
+        "cover_photo_url": "https://example.com/cover27.jpg"
+      },
+      {
+        "title": "The Intelligent Investor",
+        "author": "Benjamin Graham",
+        "category": "Finance",
+        "issue_number": 28,
+        "issue_date": "2023-06-18",
+        "short_summary": "The definitive book on value investing.",
+        "cover_photo_url": "https://example.com/cover28.jpg"
+      },
+      {
+        "title": "The Power of Now",
+        "author": "Eckhart Tolle",
+        "category": "Spirituality",
+        "issue_number": 29,
+        "issue_date": "2023-07-19",
+        "short_summary": "A guide to spiritual enlightenment.",
+        "cover_photo_url": "https://example.com/cover29.jpg"
+      },
+      {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "category": "Fiction",
+        "issue_number": 30,
+        "issue_date": "2023-08-20",
+        "short_summary": "The story of Holden Caulfield's experiences in New York City.",
+        "cover_photo_url": "https://example.com/cover30.jpg"
+      },
+      {
+        "title": "The Design of Everyday Things",
+        "author": "Don Norman",
+        "category": "Design",
+        "issue_number": 31,
+        "issue_date": "2023-09-21",
+        "short_summary": "A powerful primer on how—and why—some products satisfy customers while others only frustrate them.",
+        "cover_photo_url": "https://example.com/cover31.jpg"
+      },
+      {
+        "title": "The Pragmatic Programmer",
+        "author": "Andrew Hunt and David Thomas",
+        "category": "Technology",
+        "issue_number": 32,
+        "issue_date": "2023-10-22",
+        "short_summary": "Your journey to mastery in software development.",
+        "cover_photo_url": "https://example.com/cover32.jpg"
+      },
+      {
+        "title": "The 7 Habits of Highly Effective People",
+        "author": "Stephen R. Covey",
+        "category": "Self-help",
+        "issue_number": 33,
+        "issue_date": "2023-11-23",
+        "short_summary": "Powerful lessons in personal change.",
+        "cover_photo_url": "https://example.com/cover33.jpg"
+      },
+      {
+        "title": "The Name of the Wind",
+        "author": "Patrick Rothfuss",
+        "category": "Fantasy",
+        "issue_number": 34,
+        "issue_date": "2023-12-24",
+        "short_summary": "The tale of Kvothe, from his childhood in a troupe of traveling players, to years spent as a near-feral orphan in a crime-ridden city, to his daringly brazen yet successful bid to enter a legendary school of magic.",
+        "cover_photo_url": "https://example.com/cover34.jpg"
+      }
+    ]
+  }

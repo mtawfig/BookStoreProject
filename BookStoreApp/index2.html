@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<table id="booksTable" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+        getBooks();
+    });
+    
+    function getBooks() {
+        fetch('http://localhost:3000/books')
+            .then(response => response.json())
+            .then(data => {
+                var html = '';
+                var books = data.books;
+                for (var i = 0; i < books.length; i++) {
+                    html += '<tr>';
+                    html += '<td>' + books[i].title + '</td>';
+                    html += '<td>' + books[i].author + '</td>';
+                    html += '<td>' + books[i].category + '</td>';
+                    html += '</tr>';
+                }
+                $('#booksTable tbody').html(html);
+            });
+         
+}
+</script>
