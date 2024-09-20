@@ -20,6 +20,6 @@ Now the Application is running and you can view and use it in the browser. The U
 Open Source. Anyone can use it for learning or as a Starter to another project.
 
 ## Screenshots
-![Books Grid](screenshots/1.png)
+![Books Grid](https://github.com/mtawfig/BookStoreProject/blob/main/Screenshots/1.png)
 
-![Book View](screenshots/2.png)
+![Book View](https://github.com/mtawfig/BookStoreProject/blob/main/Screenshots/2.png)
